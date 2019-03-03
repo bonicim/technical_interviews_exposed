@@ -38,7 +38,7 @@ def test_empty_map():
 
 def test_unequal_lengths_rows():
     mmap = [
-        ['O','O','O','O','O','O','O'.'O'],
+        ['O','O','O','O','O','O','O','O'],
         ['O','L','L','L','O'],
         ['O','L','L','O','O']
     ]    
@@ -46,7 +46,7 @@ def test_unequal_lengths_rows():
 
     mmap = [
         ['O','L','L','L','O'],
-        ['O','O','O','O','O','O','O'.'O'],
+        ['O','O','O','O','O','O','O','O'],
         ['O','L','L','O','O']
     ]    
     assert count_islands(mmap) == 3
