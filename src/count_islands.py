@@ -1,3 +1,4 @@
+# Uses recursion 
 def count_islands(mmap):
     max = 0
     for row, row_elem in enumerate(mmap):
@@ -16,10 +17,7 @@ def get_island_size(mmap, row, col, initial_size):
     # check west
     if col - 1 == -1:
         print("Not on real west. Out of bounds")
-    elif mmap[row][col - 1] == "O":
-        print("On ocean. No land. Stop checking and check next adjacent west.")
-    else:
-        print("On land. Increase size to 1 and check the adjacent spots of this west.")
+    elif mmap[row][col - 1] == "L":
         mmap[row][col - 1] = "O"
         total_size = total_size + 1
         total_size = get_island_size(mmap, row, col - 1, total_size)
