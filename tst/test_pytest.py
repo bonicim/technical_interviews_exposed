@@ -2,33 +2,33 @@ from src.count_islands import count_islands
 
 def test_big_island():
     mmap = [
-        [0,0,0,0,0],
-        [0,1,1,1,0],
-        [0,1,1,0,0]
+        ['O','O','O','O','O'],
+        ['O','L','L','L','O'],
+        ['O','L','L','O','O']
     ]    
     assert count_islands(mmap) == 5
 
 def test_small_island():
     mmap = [
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,1]
+        ['O','O','O','O','O'],
+        ['O','O','O','L','O'],
+        ['O','O','O','O','O']
     ]    
     assert count_islands(mmap) == 1
 
 def test_two_islands():
     mmap = [
-        [0,0,1,1,0],
-        [0,1,1,0,0],
-        [0,0,0,0,1]
+        ['O','O','L','O','O'],
+        ['O','L','L','L','O'],
+        ['O','O','O','O','L']
     ]    
     assert count_islands(mmap) == 4
 
 def test_no_islands():
     mmap = [
-        [0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,0,0,0,0]
+        ['O','O','O','O','O'],
+        ['O','O','O','O','O'],
+        ['O','O','O','O','O']
     ]    
     assert count_islands(mmap) == 0
 
@@ -38,15 +38,15 @@ def test_empty_map():
 
 def test_unequal_lengths_rows():
     mmap = [
-        [0,0,0,0,0,0,0,0],
-        [0,0,0,0,0],
-        [0,1,1,0,0]
+        ['O','O','O','O','O','O','O'.'O'],
+        ['O','L','L','L','O'],
+        ['O','L','L','O','O']
     ]    
-    assert count_islands(mmap) == 2
+    assert count_islands(mmap) == 5
 
     mmap = [
-        [0,0,0,1,1],
-        [0,0,0,0,1,1,1,1],
-        [0,1,1,0,0]
+        ['O','L','L','L','O'],
+        ['O','O','O','O','O','O','O'.'O'],
+        ['O','L','L','O','O']
     ]    
-    assert count_islands(mmap) == 6
+    assert count_islands(mmap) == 3
