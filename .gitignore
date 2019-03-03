@@ -117,6 +117,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# init
-__init__*
