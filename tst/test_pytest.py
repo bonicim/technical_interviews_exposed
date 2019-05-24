@@ -52,23 +52,18 @@ def test_unequal_lengths_rows():
     ]    
     assert count_islands(mmap) == 3
 
-@pytest.mark.skip
 def test_typical_case_lowest_integer():
     assert get_lowest_integer("746209249", 5) == "0249"
     assert get_lowest_integer("43597658", 2) == "357658"
 
-@pytest.mark.skip
 def test_zero_remove_lowest_intger():
     assert get_lowest_integer("839275", 0) == "839275"
 
-@pytest.mark.skip
 def test_greater_than_size_lowest_integer():
-    assert get_lowest_integer("3245", 42) == "0"
+    assert get_lowest_integer("24", 3) == "0"
 
-@pytest.mark.skip
 def test_negative_remove_lowest_integer():
     assert get_lowest_integer("3334", -3) == "3334"
 
-@pytest.mark.skip
 def test_remove_size_equal_lowest_integer():
     assert get_lowest_integer("4321", 4) == "0"

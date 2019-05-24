@@ -47,16 +47,18 @@ def get_island_size(mmap, row, col, initial_size):
 
     return total_size
 
-def get_lowest_integer(int, remove):
-    # convert string to int
-    # put the int into an array
-    # create a stack and put the first digit in it
-    #   
-    # Step Two: Go through every digit in the int array and push it in
-    # the stack, checking if the number being pushed is less than the
-    # number on the top of the stack and then popping as needed
+def get_lowest_integer(number, remove):
+    if len(number) <= remove:
+        return "0"
     
-    # with the leftover stack pop everything into another stack and then pop it again and 
-    # convert to a string, which will be the final answer
+    digits = [int(digit) for digit in number]    
+    stack = [digits.pop(0)]
 
-    return None
+    for digit in digits:
+        for num in stack[::-1]:
+            if remove > 0 and digit < num:
+                stack.pop()    
+                remove -= 1
+        stack.append(digit)            
+
+    return ''.join([str(x) for x in stack])    
