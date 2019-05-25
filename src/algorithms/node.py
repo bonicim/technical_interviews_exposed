@@ -1,8 +1,8 @@
 class Node:
-    def __init__(self, mydata):
+    def __init__(self, data):
         self.left = None
         self.right = None
-        self.data = mydata
+        self.data = data
 
     def __eq__(self, other):
         """Overrides the default implementation"""
