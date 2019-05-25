@@ -3,7 +3,7 @@ Simple and clean solutions for typical technical interview questions. The soluti
 
 This repo is a resource for the Technical Interviews Workshops at Northeastern University Seattle campus. Feel free to join the slack channel for this workshop. Note, you must have a husky.neu.edu email address to join the channel:
 
-https://neu-tech-intv-wkshp.slack.com/signup
+[https://join.slack.com/t/neu-tech-intv-wkshp/signup](https://join.slack.com/t/neu-tech-intv-wkshp/signup?x=x-p383132105155-382689801953-645529769844)
 
 # Tests
 
