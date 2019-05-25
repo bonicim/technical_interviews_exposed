@@ -1,20 +1,18 @@
 # Summary
 Simple and clean solutions for typical technical interview questions. The solutions are written in Python3. 
 
-## List of Technical Questions
-* [count_islands](https://github.com/bonicim/technical_interviews_exposed/blob/master/src/count_islands.py)
+This repo is a resource for the Technical Interviews Workshops at Northeastern University Seattle campus. Feel free to join the slack channel for this workshop. Note, you must have a husky.neu.edu email address to join the channel:
 
+https://neu-tech-intv-wkshp.slack.com/signup
 
+# Tests
 
-
-## Tests
-
-### Prerequisites
+## Prerequisites
 You must have the following installed on your machine:
 * Python3
 * Pytest
   
-### How to run the tests
+## How to run the tests
 On the command line, `cd` into the top level directory of this repo and enter the following command:
 
 ``` 

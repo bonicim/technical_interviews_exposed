@@ -1,6 +1,7 @@
 import pytest
-from src.algoritms import (
+from src.algorithms import (
     count_islands, get_lowest_integer)
+
 def test_big_island():
     mmap = [
         ['O','O','O','O','O'],
@@ -67,3 +68,4 @@ def test_negative_remove_lowest_integer():
 
 def test_remove_size_equal_lowest_integer():
     assert get_lowest_integer("4321", 4) == "0"
+

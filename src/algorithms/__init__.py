@@ -61,4 +61,4 @@ def get_lowest_integer(number, remove):
                 remove -= 1
         stack.append(digit)            
 
-    return ''.join([str(x) for x in stack])    
+    return ''.join([str(x) for x in stack])
