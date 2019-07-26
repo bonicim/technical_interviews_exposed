@@ -16,12 +16,16 @@ def test_multiples_random_number():
 
 
 def test_multiple_cases_big_number_in_front():
+    assert get_lowest_integer("678123", -1) == "678123"
+    assert get_lowest_integer("678123", 0) == "678123"
+    assert get_lowest_integer("678123", 1) == "67123"
     assert get_lowest_integer("678123", 1) == "67123"
     assert get_lowest_integer("678123", 2) == "6123"
     assert get_lowest_integer("678123", 3) == "123"
     assert get_lowest_integer("678123", 4) == "12"
     assert get_lowest_integer("678123", 5) == "1"
     assert get_lowest_integer("678123", 6) == "0"
+    assert get_lowest_integer("678123", 42) == "0"
 
 def test_multiple_cases_small_numbers_in_front():
     assert get_lowest_integer("123678", 1) == "12367"
