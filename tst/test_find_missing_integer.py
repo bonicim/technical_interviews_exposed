@@ -104,3 +104,9 @@ def test_empty_list():
     actual = find_missing_integer(arr)
 
     assert actual == 1
+
+def test_duplicates_list():
+    arr = [5, 5, 5, 5]
+    actual = find_missing_integer(arr)
+
+    assert actual == 1

@@ -1,4 +1,5 @@
 def find_missing_integer(arr):
+    # return find_missing_integer_set(arr)
     return find_missing_integer_pigeonhole_principle_sol(arr)
 
 def find_missing_integer_set(arr):
@@ -7,7 +8,7 @@ def find_missing_integer_set(arr):
     
     for num in arr_set:
         if (num > 0) and (result in arr_set):
-            result += 1
+         result += 1
     return result
 
 def find_missing_integer_pigeonhole_principle_sol(arr):
