@@ -14,7 +14,7 @@ def two_sum(n, k):
     :raises: None
 
     """
-    return two_sum_brute_force_sol(n, k)
+    return two_sum_hash_sol(n, k)
 
 def two_sum_brute_force_sol(n, k):
     for i, val in enumerate(n):
@@ -25,7 +25,22 @@ def two_sum_brute_force_sol(n, k):
     return False
 
 def two_sum_hash_sol(n, k):
-    return
+    diffs = {}
+    for i, val in enumerate(n):
+        indexes = diffs.get(val)
+        if indexes:
+            indexes.add(i)
+            diffs[val] = indexes
+        else:
+            diffs[val] = {i}
+
+    for i, val in enumerate(n):
+        diff = k - val
+        indexes = diffs.get(diff) 
+        if indexes and ( (i not in indexes) or (len(indexes) > 1) ):
+            return True
+    
+    return False
 
 def two_sum_sort_binary_search_sol(n, k):
     return
