@@ -14,7 +14,7 @@ def two_sum(n, k):
     :raises: None
 
     """
-    return two_sum_sort_binary_search_sol(n, k)
+    return two_sum_sort_walk_inward_sol(n, k)
 
 def two_sum_brute_force_sol(n, k):
     for i, val in enumerate(n):
@@ -65,6 +65,18 @@ def binary_search(start, end, tgt, n_sorted):
             return mid
     return -1       
 
-
 def two_sum_sort_walk_inward_sol(n, k):
-    return
+    n_sorted = sorted(n)
+    lhs = 0
+    rhs = len(n_sorted) - 1
+
+    while lhs < rhs:
+        sum = n_sorted[lhs] + n_sorted[rhs]
+        if sum == k:
+            return True
+        elif sum > k:
+            rhs-=1
+        else:
+            lhs+=1
+    
+    return False
