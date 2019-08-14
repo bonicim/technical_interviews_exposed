@@ -43,6 +43,17 @@ def two_sum_hash_sol(n, k):
     return False
 
 def two_sum_sort_binary_search_sol(n, k):
+    def binary_search(start, end, tgt, n_sorted):
+        while (start <= end):
+            mid = int((start + end) / 2)
+            if tgt < n_sorted[mid]:
+                end = mid - 1
+            elif tgt > n_sorted[mid]:
+                start = mid + 1
+            elif n_sorted[mid] == tgt:
+                return mid
+        return -1       
+    
     n_sorted = sorted(n)
     
     for i, val in enumerate(n):
@@ -53,17 +64,6 @@ def two_sum_sort_binary_search_sol(n, k):
                     (i < len(n_sorted) - 1 and (n_sorted[i + 1] == n_sorted[i]))):
                 return True        
     return False
-
-def binary_search(start, end, tgt, n_sorted):
-    while (start <= end):
-        mid = int((start + end) / 2)
-        if tgt < n_sorted[mid]:
-            end = mid - 1
-        elif tgt > n_sorted[mid]:
-            start = mid + 1
-        elif n_sorted[mid] == tgt:
-            return mid
-    return -1       
 
 def two_sum_sort_walk_inward_sol(n, k):
     n_sorted = sorted(n)
