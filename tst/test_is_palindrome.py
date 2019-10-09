@@ -1,5 +1,5 @@
 import pytest
-from src.algorithms.tape_equilibrium import is_palindrome
+from src.algorithms.is_palindrome import is_palindrome
 
 
 def test_true():
