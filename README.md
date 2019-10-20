@@ -20,7 +20,23 @@ You must have the following installed on your machine:
 To run a single test file, `cd` into the `tst` directory. Then run any test file. For example, to run the `test_two_sum.py` tests, enter the following command:
 
 ```bash
-pytest test_two_sum.py --verbose
+$ pytest test_two_sum.py --verbose
+```
+
+To run all tests:
+
+```bash
+$ pytest
+```
+
+Or if you want to invoke pytest via python, try **one** of the following:
+
+```bash
+python -m pytest
+```
+
+```bash
+python3 -m pytest
 ```
 
 You should see the following output:

@@ -16,7 +16,8 @@ def two_sum(n, k):
     :raises: None
 
     """
-    return two_sum_hash_sol(n, k)
+    #return two_sum_hash_sol(n, k)
+    return two_sum_hash_sol_v2(n, k)
 
 
 def two_sum_brute_force_sol(n, k):
@@ -38,24 +39,19 @@ def two_sum_hash_sol(n, k):
     return False
 
 
-def two_sum_hash_sol_v2(n, k):
+def two_sum_hash_sol_v2(nums, target):
     """
     This solution keeps track of the indexes of the two pairs if found
     """
-    for i, val in enumerate(n):
-        indexes = diffs.get(val)
-        if indexes:
-            indexes.add(i)
-            diffs[val] = indexes
-        else:
-            diffs[val] = {i}
-
-    for i, val in enumerate(n):
-        diff = k - val
-        indexes = diffs.get(diff)
-        if indexes and ((i not in indexes) or (len(indexes) > 1)):
+    complements = dict()
+    for index, num in enumerate(nums):
+        complement = target - num
+        if complement in complements:
+            complement_indexes = complements.get(complement)
+            indexes = [index, complement_indexes.pop()]
+            print(f"Indexes of target: {indexes}")
             return True
-
+        complements.update({num: set([index])})
     return False
 
 
