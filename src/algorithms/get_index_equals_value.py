@@ -7,16 +7,17 @@ def binary_search_solution(nums, start, end, current_min_index):
         return -1
 
     if start == end:
+        # handle when we reach farthest left
         if start == 0:
             if nums[start] == 0:
                 return start
-            else:
-                return current_min_index
+            return current_min_index
 
+        # handle the when farthest right if the values match
         if nums[end] == end:
             return end
-        else:
-            return current_min_index
+
+        return current_min_index
 
     mid = (end - start) // 2
     if mid == 0:
