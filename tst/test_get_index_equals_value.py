@@ -30,3 +30,11 @@ def test_index_in_middle():
     arr = [-54645, -55, -1, 3, 78, 898, 6361487]
 
     assert get_index_equals_value(arr) == 3
+
+
+def test_single_list_with_zero_should_return_0():
+    assert get_index_equals_value([0]) == 0
+
+
+def test_single_list_with_non_zero_should_return_negative_1():
+    assert get_index_equals_value([42]) == -1
