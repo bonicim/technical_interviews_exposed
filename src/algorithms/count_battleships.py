@@ -36,8 +36,10 @@ def count_battleships_non_recursive_solution(ocean_map):
         for col, col_elem in enumerate(row_elem):
             if col_elem == ".":
                 continue
+            # check up
             if row - 1 >= 0 and ocean_map[row - 1][col] == "X":
                 continue
+            # check left
             if col - 1 >= 0 and ocean_map[row][col - 1] == "X":
                 continue
             ship_count += 1
