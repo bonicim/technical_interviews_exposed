@@ -1,7 +1,9 @@
 import pytest
 import hypothesis.strategies as st
 
-from src.algorithms.two_sum import two_sum
+from src.algorithms.fifty_common_interview_questions_leetcode_book.two_sum import (
+    two_sum,
+)
 from hypothesis import given
 
 

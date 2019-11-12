@@ -1,6 +1,8 @@
 import pytest
 
-from src.algorithms.two_sum_sorted_array import two_sum_sorted_array
+from src.algorithms.fifty_common_interview_questions_leetcode_book.two_sum_sorted_array import (
+    two_sum_sorted_array,
+)
 
 
 def test_simple_case_should_return_1_2_indexes():

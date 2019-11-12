@@ -1,5 +1,7 @@
 import pytest
-from src.algorithms.is_palindrome import is_palindrome
+from src.algorithms.fifty_common_interview_questions_leetcode_book.is_palindrome import (
+    is_palindrome,
+)
 
 
 def test_should_be_true():

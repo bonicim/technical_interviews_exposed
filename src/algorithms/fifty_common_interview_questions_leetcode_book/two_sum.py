@@ -16,7 +16,7 @@ def two_sum(n, k):
     :raises: None
 
     """
-    #return two_sum_hash_sol(n, k)
+    # return two_sum_hash_sol(n, k)
     return two_sum_hash_sol_v2(n, k)
 
 

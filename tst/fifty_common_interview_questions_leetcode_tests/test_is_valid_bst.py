@@ -1,6 +1,8 @@
 import pytest
 
-from src.algorithms.is_valid_bst import is_valid_bst
+from src.algorithms.fifty_common_interview_questions_leetcode_book.is_valid_bst import (
+    is_valid_bst,
+)
 from src.algorithms.node import Node
 
 
