@@ -4,31 +4,19 @@ def is_palindrome(string):
 
 
 def is_palindrome_recursive_solution(string, left_index, right_index):
-    if len(string) == 0 or left_index == right_index or left_index > right_index:
-        return True
+    def is_palindrome_recursive_helper(string, left_index, right_index):
+        if len(string) == 0 or left_index == right_index or left_index > right_index:
+            return True
 
-    string = string.lower()
-    left_char = string[left_index]
-    right_char = string[right_index]
-
-    while not left_char.isalnum() and left_index < right_index:
-        left_index += 1
         left_char = string[left_index]
-    if not left_char.isalnum():
-        left_char = ""
-
-    while not right_char.isalnum():
-        if right_index == 0:
-            break
-        right_index -= 1
         right_char = string[right_index]
-    if not right_char.isalnum():
-        right_char = ""
+        if left_char != right_char:
+            return False
+        return is_palindrome_recursive_helper(string, left_index + 1, right_index - 1)
 
-    if left_char != right_char:
-        return False
-
-    return is_palindrome_recursive_solution(string, left_index + 1, right_index - 1)
+    # recursive works only when the string is normalized
+    string = "".join([char for char in string if char.isalnum()]).lower()
+    return is_palindrome_recursive_helper(string, 0, len(string) - 1)
 
 
 def is_palindrome_walk_inward(string):
