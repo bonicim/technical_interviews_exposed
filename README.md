@@ -64,3 +64,6 @@ test_two_sum.py::test_zero_only PASSED                                          
 
 ============================================================ 11 passed in 0.11s =============================================================
 ```
+
+## Extra
+See my blog post: [A Shortish Guide to Preparing For a Technical Interview](https://markbonicillo.com/2019/11/20/a-shortish-guide-to-preparing-for-a-technical-interview.html)
