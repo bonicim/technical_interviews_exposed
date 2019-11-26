@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bonicim/technical_interviews_exposed.svg?branch=master)](https://travis-ci.org/bonicim/technical_interviews_exposed)
+
 # Summary
 
 Simple and clean solutions for typical technical interview questions. The solutions are written in Python3.
