@@ -13,7 +13,7 @@ def test_simple_case_should_be_true():
     root.left = root_left
     root.right = root_right
 
-    is_balanced(root) is True
+    assert is_balanced(root) is True
 
 
 def test_simple_case_should_be_false():
@@ -29,4 +29,26 @@ def test_simple_case_should_be_false():
     root.left = root_left
     root.right = root_right
 
-    is_balanced(root) is False
+    assert is_balanced(root) is False
+
+
+def test_single_node_should_be_true():
+    assert is_balanced(Node(2)) is True
+
+
+def test_null_case_should_be_true():
+    assert is_balanced(None) is True
+
+
+def test_unbalanced_at_right_child():
+    root = Node(1)
+
+    root_left = Node(2, left=Node(3), right=Node(4))
+    root.left = root_left
+
+    root_right = Node(5)
+    root_right_right = Node(6, left=Node(7))
+    root_right.right = root_right_right
+    root.right = root_right
+
+    assert is_balanced(root) is False

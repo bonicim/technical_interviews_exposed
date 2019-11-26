@@ -29,11 +29,16 @@ def is_balanced(root):
     Return false.
     """
     # return is_balanced_naive_solution(root)
-    # return is_balanced_optimal_solution(root)
-    return is_balanced_optimal_solution_using_classes(root)
+    return is_balanced_optimal_solution(root)
+    # return is_balanced_optimal_solution_using_classes(root)
 
 
 def is_balanced_naive_solution(root):
+    # This solution is naive because it checks the height at every node, starting at the root.
+    # We start at the root and find the height of the left and right subrtree;
+    # if they're balanced, then we have to check if the left and right nodes are balanced,
+    # triggering each node to find the height at its respective subtrees, thus requiring us to
+    # "recount" the height again. This is duplicate effort that is unnecessary.
     def height(node):
         if not node:
             return 0
@@ -52,6 +57,10 @@ def is_balanced_naive_solution(root):
 
 
 def is_balanced_optimal_solution(root):
+    # The optimal solution runs in O(n) time because it doesn't recount the same height as in
+    # in the naive solution. Rather, this solution is a bottom up approach. It recurses all the way
+    # down to the leaf node, and returns -1 if its unbalanced or its height. This result is immediately
+    # bubbled up to the root. The algorithm immediately stops once it finds an unbalanced node.
     def check_height(root):
         if not root:
             return 0
@@ -70,10 +79,14 @@ def is_balanced_optimal_solution(root):
         else:
             return max(left_height, right_height) + 1
 
-    return check_height == -1
+    return check_height(root) != -1
 
 
 def is_balanced_optimal_solution_using_classes(root):
+    # This solution is the same approach as is_balanced_optimal solution except that it
+    # uses a class to hold the height and the is_balanced status.
+    # Using a class makes the code more clear and shows intent. The meaning of -1
+    # is hidden and is wrapped around the is_balanced boolean flag of the TreeBalanceStatus class.
     tree_balance_status = check_balance(root)
     return tree_balance_status.is_balanced
 
