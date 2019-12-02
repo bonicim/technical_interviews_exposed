@@ -16,25 +16,20 @@ def get_min_parenthesis(string):
 
 def stack_solution(string):
     stack = []
+    closing_parens = {")": "("}
 
     for char in string:
-        if char == "(":
-            stack.append(char)
-        elif char == ")":
-            if stack:
-                char_in_stack = stack.pop()
-                stack.append(char_in_stack)
-                if char_in_stack == "(":
+        if char in closing_parens:
+            if not stack:
+                stack.append(char)
+            else:
+                top_opening_paren = stack[-1]
+                if closing_parens.get(char) == top_opening_paren:
                     stack.pop()
                 else:
                     stack.append(char)
-            else:
-                stack.append(char)
-
         else:
-            raise Exception(
-                "Illegal input. The string should only consist of open or closed parenthesis"
-            )
+            stack.append(char)
 
     return len(stack)
 
