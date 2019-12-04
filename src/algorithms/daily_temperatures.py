@@ -16,11 +16,14 @@ def get_days_to_warmer_temp(temperatures):
     days_till_increase = [0] * len(temperatures)
     increasing_temps_stack = []
 
-    for index in range(len(temperatures) - 1, -1, -1):
+    for index in range(
+        len(temperatures) - 1, -1, -1
+    ):  # loop through list of temps from right to left
         current_temp = temperatures[index]
 
         while increasing_temps_stack and current_temp >= next_future_day_temp():
             increasing_temps_stack.pop()
+
         if increasing_temps_stack:
             days_till_increase[index] = next_future_day_index() - index
 
