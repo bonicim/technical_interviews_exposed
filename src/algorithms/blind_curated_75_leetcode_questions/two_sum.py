@@ -34,8 +34,7 @@ def two_sum_hash_sol(n, k):
     for val in n:
         if k - val in diffs:
             return True
-        else:
-            diffs.add(val)
+        diffs.add(val)
     return False
 
 
