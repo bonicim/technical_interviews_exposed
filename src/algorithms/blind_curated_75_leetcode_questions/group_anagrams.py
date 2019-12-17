@@ -7,7 +7,7 @@ Example:
 """
 
 
-def get_list_anagrams(words):
+def group_anagrams(words):
     return get_list_anagrams_v1(words)
 
 
