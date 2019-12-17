@@ -8,6 +8,7 @@ class Node:
         self.tail = None
         self.left = None
         self.right = None
+        self.next = None
 
         if kwargs is not None:
             for key, val in kwargs.items():
