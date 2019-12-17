@@ -22,3 +22,10 @@ def test_example():
     expected = 5
 
     assert find_rotation_point(words) == expected
+
+
+def test_not_rotated():
+    words = ["a", "n", "z"]
+    expected = 0
+
+    assert find_rotation_point(words) == expected

@@ -24,6 +24,9 @@ def find_rotation_point(words):
     left_index = 0
     right_index = len(words) - 1
 
+    if words[left_index] < words[right_index]:
+        return 0
+
     while left_index < right_index:
         distance_to_mid_index = (right_index - left_index) // 2
         mid_index = left_index + distance_to_mid_index
