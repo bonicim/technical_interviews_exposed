@@ -11,17 +11,36 @@ Both the left and right subtrees must also be binary search trees.
 
 
 def is_valid_bst(root):
-    return valid_bst_v1(root, float("-inf"), float("inf"))
-    # return valid_bst_v2(root, None)
+    # return recursive_solution(root, float("-inf"), float("inf"))
+    return iterative_solution(root)
 
 
-# recursive solution
-def valid_bst_v1(root, low_data, high_data):
+def recursive_solution(root, lower_bound, higher_bound):
     if not root:
         return True
-    elif low_data >= root.data or high_data <= root.data:
+    if root.data <= lower_bound or root.data >= higher_bound:
         return False
-    else:
-        return valid_bst_v1(root.left, low_data, root.data) and valid_bst_v1(
-            root.right, root.data, high_data
-        )
+    return recursive_solution(root.left, lower_bound, root.data) and recursive_solution(
+        root.right, root.data, higher_bound
+    )
+
+
+def iterative_solution(root):
+    node_and_bounds_stack = [(root, -float("inf"), float("inf"))]
+
+    while len(node_and_bounds_stack):
+        parent_node, lower_bound, upper_bound = node_and_bounds_stack.pop()
+
+        if parent_node.data <= lower_bound or parent_node.data >= upper_bound:
+            return False
+
+        if parent_node.left:
+            node_and_bounds_stack.append(
+                (parent_node.left, lower_bound, parent_node.data)
+            )
+        if parent_node.right:
+            node_and_bounds_stack.append(
+                (parent_node.right, parent_node.data, upper_bound)
+            )
+
+    return True
