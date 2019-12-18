@@ -27,17 +27,14 @@ def merge_ranges(meeting_blocks):
     merged_meetings_stack = []
     merged_meetings_stack.append(sorted_meeting_blocks[0])
 
-    for current_meeting_start, current_meeting_end in sorted_meeting_blocks[
-        1:
-    ]:  # yes, I'm slicking a List, and it costs me space. But this makes the code more readable
-        prev_meeting_start, prev_meeting_end = merged_meetings_stack[
-            -1
-        ]  # equivalent of peek
+    for current_meeting_start, current_meeting_end in sorted_meeting_blocks[1:]:
+
+        # equivalent of peek
+        prev_meeting_start, prev_meeting_end = merged_meetings_stack[-1]
 
         if current_meeting_start <= prev_meeting_end:
-            new_end = max(
-                current_meeting_end, prev_meeting_end
-            )  # handles the case where current meeting completes within the last meeting duration
+            # handles the case where current meeting completes within the last meeting duration
+            new_end = max(current_meeting_end, prev_meeting_end)
             merged_meeting = (prev_meeting_start, new_end)
 
             merged_meetings_stack.pop()
