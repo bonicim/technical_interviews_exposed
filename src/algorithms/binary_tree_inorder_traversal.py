@@ -1,13 +1,13 @@
 def inorder_traversal(root):
-    tree = BinaryTree(root)
-    tree.inorder_traversal_v1()
-    return tree.inorder_traversal_display
+    # tree = BinaryTree(root)
+    # tree.inorder_traversal_v1()
+    # return tree.inorder_traversal_display
 
-    # return recursive_traversal(root, [])
+    return recursive_traversal(root)
 
 
 # Unnecessarily creates a new list on every recursive call; not memory efficient
-def recursive_traversal(root, acc):
+def recursive_traversal(root, acc=[]):
     if not root:
         return []
 
