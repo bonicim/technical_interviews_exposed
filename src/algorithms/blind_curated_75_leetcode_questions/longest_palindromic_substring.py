@@ -33,10 +33,14 @@ def expand_from_middle_solution(string):
     end = 0
 
     for index in range(len(string)):
-        odd_length_substring = largest_palindrome_len(string, index, index)
-        even_length_substring = largest_palindrome_len(string, index, index + 1)
+        substring_start_at_center = largest_palindrome_len(string, index, index)
+        substring_start_left_right_of_center = largest_palindrome_len(
+            string, index, index + 1
+        )
 
-        length_palidrome_at_index = max(odd_length_substring, even_length_substring)
+        length_palidrome_at_index = max(
+            substring_start_at_center, substring_start_left_right_of_center
+        )
 
         if length_palidrome_at_index > (end - start):
             start = index - ((length_palidrome_at_index - 1) // 2)
@@ -62,21 +66,21 @@ def dynamic_programming_solution(string):
             start = index
             max_length = 2
 
-    for letters_to_consider in range(3, len(string) + 1):
-        largest_index_within_bounds_of_letters_to_consider = (
-            len(string) - letters_to_consider + 1
-        )
-        for left_index in range(largest_index_within_bounds_of_letters_to_consider):
-            right_index = left_index + letters_to_consider - 1
-            is_before_substring_palindrome = cache[left_index + 1][right_index - 1]
+    for substring_length in range(3, len(string) + 1):
+        final_ending_index = len(string) - substring_length + 1
+        for left_index in range(final_ending_index):
+            right_index = left_index + substring_length - 1
+            is_before_substring_palindrome = cache[left_index + 1][
+                right_index - 1
+            ]  # inside substring
 
             if (
                 is_before_substring_palindrome
-                and string[left_index] == string[right_index]
+                and string[left_index] == string[right_index]  # outer substring
             ):
                 cache[left_index][right_index] = True
 
-                max_length = letters_to_consider
+                max_length = substring_length
                 start = left_index
 
     return string[start : start + max_length]
