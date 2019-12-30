@@ -1,6 +1,8 @@
 import pytest
 
-from src.algorithms.find_missing_integer_ii import find_missing_integer_ii
+from src.algorithms.blind_curated_75_leetcode_questions.missing_number import (
+    find_missing_integer_ii,
+)
 
 
 def test_simple_case_should_return_4():
