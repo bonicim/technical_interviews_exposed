@@ -46,7 +46,7 @@ def divide_conquer_solution(points, kth):
 
     Quickselect uses the same overall approach as quicksort, choosing one element as a pivot and partitioning the data in two based on the pivot, accordingly as less than or greater than the pivot.
     However, instead of recursing into both sides, as in quicksort, quickselect only recurses into one side – the side with the element it is searching for.
-    This reduces the average complexity from O(n log n) to O(n), with a worst case of O(n2).
+    This reduces the average complexity from O(n log n) to O(n), with a worst case of O(n^2).
     You can think of quickselect as a partialsort sorting algorithm.
 
     This question basically tests your knowledge of sorting and selection algorithms.

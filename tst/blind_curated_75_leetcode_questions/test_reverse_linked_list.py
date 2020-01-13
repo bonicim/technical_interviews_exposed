@@ -14,10 +14,31 @@ def test_example():
         temp.next = Node(i)
         temp = temp.next
 
-    new_head = Node(5)
-    new_temp = new_head
+    expected = Node(5)
+    new_temp = expected
     for i in range(4, 0, -1):
         new_temp.next = Node(i)
         new_temp = new_temp.next
 
-    assert reverse_linked_list(head) == new_head
+    actual = reverse_linked_list(head)
+
+    assert actual == expected
+    assert has_cycle(actual) is True
+
+
+def test_two_items():
+    head = Node(1, next=Node(2))
+    expected = Node(2, next=Node(1))
+    actual = reverse_linked_list(head)
+
+    assert actual == expected
+    assert has_cycle(actual) is True
+
+
+def has_cycle(actual):
+    prev = None
+    while actual:
+        prev = actual
+        actual = actual.next
+
+    return prev.next is None

@@ -4,18 +4,23 @@ of elements in the array that sums to exactly k. For example, given the array [1
 k = 8, the answer is “yes,” but given k = 6 the answer is “no"
 """
 
+"""Commentary
+Every competent software engineer should complete this problem in blazing speed. This is a problem that will provide a lot
+of information about the technical depth and skill of a candidate because this question has several possible solutions each with
+its own pros and cons. An engineer should be able to implement the different solutions, analyze it in terms of time and space complexity,
+and then be able to tweak the code if the requirements of the question change.
+
+In this problem, the optimal solution is to a use a hashtable to find the other number that will equal to the sum. Although the hashtable
+uses space of O(n), we get the benefit of an optimal time complexity: O(n). The brute force solution does not use space, but the time complexity
+is bad: O(n^2). This is a common pattern in solving algorithm problems: using space complexity to improve time complexity. In general, you can't
+have both the best space and time complexity--but not always.
+
+Finally, this problem can also be solved using binary search. However it is not as optimal as the hashtable solution because sorting dominates
+the time complexity at O(n log n).
+"""
+
 
 def two_sum(n, k):
-    """Returns true if the sum of two numbers in a list equals the target; false otherwise
-
-    :param n: List of integers.
-    :type n: list.
-    :param k: The number of the sum of two numbers in arr.
-    :type k: int.
-    :returns: bool -- true or false
-    :raises: None
-
-    """
     # return two_sum_hash_sol(n, k)
     return two_sum_hash_sol_v2(n, k)
 
