@@ -1,6 +1,8 @@
 import pytest
 
-from src.algorithms.get_min_parenthesis import get_min_parenthesis
+from src.algorithms.blind_curated_75_leetcode_questions.valid_parentheses import (
+    get_min_parenthesis,
+)
 
 
 def test_simple_case_should_return_1():
