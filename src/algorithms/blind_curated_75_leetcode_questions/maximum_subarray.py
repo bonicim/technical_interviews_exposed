@@ -12,8 +12,8 @@ def get_largest_sum_subarray(nums):
     :returns: int
     :raises: None
     """
-    return brute_force(nums)
-    # return kadane_algorithm(nums)
+    # return brute_force(nums)
+    return kadane_algorithm(nums)
     # return dynamic_programming(nums)
     # return divide_and_conquer(nums)
 
@@ -45,11 +45,16 @@ def dynamic_programming(nums):
     max_sum = nums[0]
 
     for index in range(1, len(nums)):
-        sum_at_index = sub_array_sums[index - 1] + nums[index]
-        num_at_index = nums[index]
-        sub_array_sums[index] = (
-            sum_at_index if sum_at_index >= num_at_index else num_at_index
-        )
+
+        # update the current sum at the index
+        num = nums[index]
+        sum_at_index_so_far = sub_array_sums[index - 1] + num
+        if num > sum_at_index_so_far:
+            sub_array_sums[index] = num
+        else:
+            sub_array_sums[index] = sum_at_index_so_far
+
+        # update the max_sum of the whole list at this point in the iteration
         if sub_array_sums[index] > max_sum:
             max_sum = sub_array_sums[index]
 
@@ -68,7 +73,14 @@ def kadane_algorithm(nums):
     max_sum = nums[0]
     curr_sum = 0
     for num in nums:
-        curr_sum = num if curr_sum <= 0 else curr_sum + num
+
+        # update the current sum at the given index
+        if curr_sum <= 0:
+            curr_sum = num
+        else:
+            curr_sum = curr_sum + num
+
+        # update the max_sum of the whole list at this point in the iteration
         if curr_sum > max_sum:
             max_sum = curr_sum
 

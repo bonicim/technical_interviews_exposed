@@ -54,6 +54,7 @@ def two_sum_hash_sol_v2(nums, target):
     return False
 
 
+# only shown for educational purposes and to talk about different solutions
 def two_sum_sort_binary_search_sol(n, k):
     def binary_search(start, end, tgt, n_sorted):
         while start <= end:
@@ -80,6 +81,8 @@ def two_sum_sort_binary_search_sol(n, k):
     return False
 
 
+# only shown for educational purposes and to talk about different solutions
+# this solution runs in n log n due to the sorting algorithm
 def two_sum_sort_walk_inward_sol(n, k):
     n_sorted = sorted(n)
     lhs = 0

@@ -1,7 +1,9 @@
 import pytest
 import hypothesis.strategies as st
 
-from src.algorithms.get_largest_sum_subarray import get_largest_sum_subarray
+from src.algorithms.blind_curated_75_leetcode_questions.maximum_subarray import (
+    get_largest_sum_subarray,
+)
 from hypothesis import given
 
 
