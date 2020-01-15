@@ -14,13 +14,20 @@ def merge_sorted_lists(list1, list2):
     # Prints [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
     print(merge_lists(my_list, alices_list))
     """
-    merged = [0] * (len(list1) + len(list2))
 
+    """Commentary
+    Similar to the merge sorted linked list, this problem tests your ability to handle while loops and index out of bound
+    errors. The key idea is to check that the index of either list is not out-of-bounds as we traverse the length of the merged array.
+    We are guaranteed to traverse the combined length of both list because we have to visit each box of each list at most one time.
+
+
+    """
+
+    merged = [0] * (len(list1) + len(list2))
     curr_index_list1 = 0
     curr_index_list2 = 0
-    merged_index = 0
 
-    while merged_index < len(merged):
+    for merged_index in range(len(merged)):
         list1_empty = curr_index_list1 >= len(list1)
         list2_empty = curr_index_list2 >= len(list2)
 
@@ -36,7 +43,5 @@ def merge_sorted_lists(list1, list2):
         else:
             merged[merged_index] = list2[curr_index_list2]
             curr_index_list2 += 1
-
-        merged_index += 1
 
     return merged
