@@ -14,6 +14,9 @@ either end on Null, which means we have no cycles, or it will eventually catch u
 
 One way to think about cycles in a linked list is that if imagine a racetrack and having a fast and slow runner. Eventually the fast runner will lap the slow one. We use the same idea
 to detect a cycle in a linked list given the constraint of constant space.
+
+The itertative solution uses space and is much more intuitive. It sets a dummy pointer at one behind the head. Then it uses a set to record where we've been and to check if the node
+ahead of us has been seen before. If we've seen it, that means the list is a cycle.
 """
 
 
