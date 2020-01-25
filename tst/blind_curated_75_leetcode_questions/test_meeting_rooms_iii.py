@@ -1,6 +1,8 @@
 import pytest
 
-from src.algorithms.interview_cake_questions.merge_ranges import merge_ranges
+from src.algorithms.blind_curated_75_leetcode_questions.meeting_rooms_iii import (
+    merge_ranges,
+)
 
 
 def test_example():
