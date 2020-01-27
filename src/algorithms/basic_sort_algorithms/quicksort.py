@@ -1,7 +1,11 @@
 def quicksort(arr, low, high):
+    # sort only if there is more than one element in the array
     if low < high:
+        # partition/sort the current array based on some partition
         partition_index = partition(arr, low, high)
+        # sort the left side of the partition
         quicksort(arr, low, partition_index - 1)
+        # sort the right side of the partition
         quicksort(arr, partition_index + 1, high)
 
 

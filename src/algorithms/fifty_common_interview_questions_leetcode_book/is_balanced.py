@@ -73,11 +73,13 @@ def is_balanced_optimal_solution(root):
         if right_height == -1:
             return right_height
 
-        height_diff = abs(left_height - right_height)
-        if height_diff > 1:
+        height_diff_between_left_right_subtrees = abs(left_height - right_height)
+        # this check is crucial, because it bubbles up the difference anywhere in the bottom of the tree to the root
+        if height_diff_between_left_right_subtrees > 1:
             return -1
-        else:
-            return max(left_height, right_height) + 1
+
+        max_height_at_this_node = max(left_height, right_height) + 1
+        return max_height_at_this_node
 
     return check_height(root) != -1
 
