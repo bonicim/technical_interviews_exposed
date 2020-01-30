@@ -46,8 +46,13 @@ def iterative_solution(head):
     upnext = None
 
     while curr:
+
+        # update the point for upnext
         upnext = curr.next
+        # reverse the node at this point
         curr.next = prev
+
+        # update your pointers
         prev = curr
         curr = upnext
 
