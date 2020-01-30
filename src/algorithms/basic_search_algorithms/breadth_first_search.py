@@ -14,7 +14,7 @@ def bfs(graph, start, end):
             # do some logic on the current neighbor
             if neighbor not in discovered:
                 discovered.add(neighbor)
-                parents.update({neighbor: current})
+                parents[neighbor] = current
                 queue.append(neighbor)
 
     return shortest_path(start, end, parents)
