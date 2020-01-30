@@ -1,6 +1,6 @@
 import pytest
 
-from src.algorithms.blind_curated_75_leetcode_questions.valid_parentheses import (
+from src.algorithms.blind_curated_75_leetcode_questions.get_min_parenthesis import (
     get_min_parenthesis,
 )
 

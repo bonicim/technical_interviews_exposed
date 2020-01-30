@@ -25,19 +25,19 @@ If so, we remove it from the stack. Otherwise, we add that character to the stac
 The solution takes space of O(n) because at worst the input could be a bunch of closed parentheses such as ")))))))".
 
 There is a solution that takes time of O(n) with constant space of O(1). This is the best of both worlds. This solution uses a counter of unpaired open and closed parenthesis.
-It is not as intuitive as the stack solution. But it essentially does the same thing without using space. I personally don't like the optimal solution because it doesn't
-express intent, is slightly more complicated than the simpler stack solution, and a little harder to read and understand.
+It is not as intuitive as the stack solution. But it essentially does the same thing without using space. However, it only works when there is
+one type of parenthesis; anymore, then the solution breaks. Example: "((((])))" would errorneouly return true
 """
 
 
 def get_min_parenthesis(string):
-    # return stack_solution(string)
-    return balance_solution(string)
+    return stack_solution(string)
+    # return balance_solution(string)
 
 
 def stack_solution(string):
     stack = []
-    closing_parens = {")": "("}
+    closing_parens = {")": "(", "]": "["}
 
     for char in string:
         if char in closing_parens:
