@@ -7,9 +7,11 @@ from src.algorithms.blind_curated_75_leetcode_questions.longest_palindromic_subs
 
 def test_example():
     string = "babad"
-    expected = "aba"
+    expected1 = "aba"
+    expected2 = "bab"
 
-    assert longest_palindrome(string) == expected
+    actual = longest_palindrome(string)
+    assert actual == expected1 or actual == expected2
 
 
 def test_only_one_answer():
@@ -41,10 +43,10 @@ def test_palindrome_on_left_odd_len():
 
 
 def test_palindrome_on_right_len():
-    string = "sdsfgddd"
-    expected = "ddd"
+    string = "zdsfgddd"
+    expected_right = "ddd"
 
-    assert longest_palindrome(string) == expected
+    assert longest_palindrome(string) == expected_right
 
 
 def test_palindrome_on_left_even_len():
