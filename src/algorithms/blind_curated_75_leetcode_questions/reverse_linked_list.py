@@ -36,19 +36,19 @@ will correctly give the pointer to the last node which is what we want in a reve
 
 
 def reverse_linked_list(head):
-    # return iterative_solution(head)
-    return recursive_solution(head)
+    return iterative_solution(head)
+    # return recursive_solution(head)
 
 
 def iterative_solution(head):
     curr = head
     prev = None
-    upnext = None
+    upnext = head
 
-    while curr:
+    while curr is not None:
 
         # update the point for upnext
-        upnext = curr.next
+        upnext = upnext.next
         # reverse the node at this point
         curr.next = prev
 
@@ -59,12 +59,12 @@ def iterative_solution(head):
     return prev
 
 
-def recursive_solution(head):
-    if not head or not head.next:
-        return head
+def recursive_solution(node):
+    if not node or not node.next:
+        return node
 
-    in_front_node = recursive_solution(head.next)
-    head.next.next = head
-    head.next = None
+    in_front_node = recursive_solution(node.next)
+    node.next.next = node
+    node.next = None
 
     return in_front_node
