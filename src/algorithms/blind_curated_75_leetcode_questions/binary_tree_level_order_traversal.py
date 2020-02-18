@@ -47,6 +47,12 @@ def level_order_dfs_preorder(root):
         return levels
 
     def level_order_helper(levels, node, level):
+        # Since a level on a binary tree starts at 0, every time we our level is equal to the number of levels
+        # in the levels list, we know that we need to insert a new list for that level
+
+        # For example, if our current list of levels has 5 lists, that means we are keeping track
+        # of 4 levels. And if the current level that we are on, level, is 5, then we need to append a
+        # new list to levels. That new list will contain all the nodes on that level
         if len(levels) == level:
             levels.append([])
 
