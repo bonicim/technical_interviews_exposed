@@ -1,48 +1,70 @@
-def count_islands(mmap):
-    max = 0
-    for row, row_elem in enumerate(mmap):
-        for col, col_elem in enumerate(row_elem):
-            if col_elem == "L":
-                size = 1
-                row_elem[col] = "O"
-                size = get_island_size(mmap, row, col, size)
-                if size > max:
-                    max = size
-    return max
+def count_islands(matrix):
+    island_count = 0
+    for row, rows in enumerate(matrix):
+        for col, cols in enumerate(rows):
+            if cols == "L":
+                island_count += 1
+                _remove_island(matrix, row, col)
 
-def get_island_size(mmap, row, col, initial_size):
+    return island_count
+
+
+def _remove_island(matrix, row, col):
+    row_boundary = len(matrix) - 1
+    col_boundary = len(matrix[0]) - 1
+
+    # base cases
+    # outside of the rows
+    if row < 0 or row > row_boundary:
+        return
+    # outside of the columns
+    if col < 0 or col > col_boundary:
+        return
+    if matrix[row][col] == "O":
+        return
+
+    matrix[row][col] = "O"
+    _remove_island(matrix, row - 1, col)
+    _remove_island(matrix, row + 1, col)
+    _remove_island(matrix, row, col + 1)
+    _remove_island(matrix, row, col - 1)
+
+
+# provided method for getting the size of an island
+# handles the case where the matrix can have rows or columns or varying heights
+def get_island_size(matrix, row, col, initial_size):
     total_size = initial_size
 
     # check west
     if col - 1 == -1:
         print("Not on real west. Out of bounds")
-    elif mmap[row][col - 1] == "L":
-        mmap[row][col - 1] = "O"
+    elif matrix[row][col - 1] == "L":
+        matrix[row][col - 1] = "O"
         total_size = total_size + 1
-        total_size = get_island_size(mmap, row, col - 1, total_size)
-    
+        total_size = get_island_size(matrix, row, col - 1, total_size)
+
     # check north
     if row - 1 == -1:
-        print("Not on real north. Out of bounds.")     
-    elif mmap[row - 1][col] == "L":
-        mmap[row - 1][col] = "O"
+        print("Not on real north. Out of bounds.")
+    elif matrix[row - 1][col] == "L":
+        matrix[row - 1][col] = "O"
         total_size = total_size + 1
-        total_size = get_island_size(mmap, row - 1, col, total_size)
+        total_size = get_island_size(matrix, row - 1, col, total_size)
 
     # check east
-    if col + 1 > len(mmap[row]) - 1:
+    if col + 1 > len(matrix[row]) - 1:
         print("Not on real east. Out of bounds")
-    elif mmap[row][col + 1] == "L":
-        mmap[row][col + 1] = "O"
+    elif matrix[row][col + 1] == "L":
+        matrix[row][col + 1] = "O"
         total_size = total_size + 1
-        total_size = get_island_size(mmap, row, col + 1, total_size)
+        total_size = get_island_size(matrix, row, col + 1, total_size)
 
     # check south
-    if row + 1 > len(mmap) - 1:
-        print("Not on real south. Out of bounds.")  
-    elif mmap[row + 1][col] == "L":
-        mmap[row + 1][col] = "O"
+    if row + 1 > len(matrix) - 1:
+        print("Not on real south. Out of bounds.")
+    elif matrix[row + 1][col] == "L":
+        matrix[row + 1][col] = "O"
         total_size = total_size + 1
-        total_size = get_island_size(mmap, row + 1, col, total_size)
+        total_size = get_island_size(matrix, row + 1, col, total_size)
 
     return total_size

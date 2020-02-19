@@ -20,8 +20,8 @@ def test_single_item():
 
 
 def test_not_rotated():
-    nums = [0, 1, 2, 3]
-    expected = 0
+    nums = [1, 2, 3]
+    expected = 1
 
     assert find_min(nums) == expected
 

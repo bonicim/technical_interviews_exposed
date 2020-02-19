@@ -8,24 +8,27 @@ def find_min(nums):
 
     You may assume no duplicate exists in the array.
     """
-    if len(nums) == 1:
-        return nums[0]
 
+    # handles case of a sorted array that shifted by 0
     if nums[len(nums) - 1] > nums[0]:
         return nums[0]
 
     first_num = nums[0]
     left = 0
     right = len(nums) - 1
+    rotate_index = 0
 
     while left < right:
-        pivot_index = left + ((right - left) // 2)
+        pivot_index = (right + left) // 2
         pivot = nums[pivot_index]
 
-        if pivot > first_num:
+        if pivot >= first_num:
             left = pivot_index
-        elif pivot < first_num:
+        else:
             right = pivot_index
 
         if right - left == 1:
-            return nums[right]
+            rotate_index = right
+            break
+
+    return nums[rotate_index]
