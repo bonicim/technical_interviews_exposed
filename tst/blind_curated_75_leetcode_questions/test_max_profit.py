@@ -1,4 +1,6 @@
 import pytest
+import requests
+import urllib
 
 from src.algorithms.blind_curated_75_leetcode_questions.max_profit import max_profit
 

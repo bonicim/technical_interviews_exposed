@@ -18,7 +18,7 @@
 
 """ Commentary
 
-Reverser words is a difficult problem although it looks easy at first glance. The hard part about this problem is how to deal with spaces, especially multiple spaces.
+Reverse words is a difficult problem although it looks easy at first glance. The hard part about this problem is how to deal with spaces, especially multiple spaces.
 How you deal with the space problem is related how well you optimize for space. For example, you can use a data structure such as a list or a stack to store the
 characters in reversed order. But then you will have to deal with appending the space at the very end of the word when building the final result.
 

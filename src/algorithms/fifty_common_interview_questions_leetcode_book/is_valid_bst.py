@@ -43,7 +43,6 @@ def recursive_solution(node, lower_bound, higher_bound):
 
 
 # this solution uses space of n
-#
 def iterative_top_down_solution(root):
     node_and_bounds_stack = [(root, -float("inf"), float("inf"))]
 
