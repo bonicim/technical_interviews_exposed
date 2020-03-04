@@ -22,7 +22,7 @@ def minimum_steps_to_one(n):
     t = process_time()
 
     # return memoization_top_down_approach(n)
-    # return recusive_approach(n)
+    # result = recursive_approach(n)
     # return greedy_approach(n)
     result = tabulation_bottom_up(n)
     elapsed_time = process_time() - t
@@ -48,17 +48,17 @@ def greedy_approach(n):
 # shown here for instructional purposes
 # fails when n = 1000 because the function will exceed the call stack limit,
 # resulting in RecursionError: maximum recursion depth exceeded in comparison
-def recusive_approach(n):
+def recursive_approach(n):
     if n == 1:
         return 0
 
-    min_steps = 1 + recusive_approach(n - 1)
+    min_steps = 1 + recursive_approach(n - 1)
 
     if n % 3 == 0:
-        steps = 1 + greedy_approach(n // 3)
+        steps = 1 + recursive_approach(n // 3)
         min_steps = min(min_steps, steps)
     if n % 2 == 0:
-        steps = 1 + greedy_approach(n // 2)
+        steps = 1 + recursive_approach(n // 2)
         min_steps = min(min_steps, steps)
 
     return min_steps

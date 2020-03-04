@@ -1,7 +1,7 @@
 import pytest
 import sys
 
-from src.algorithms.minimum_steps_to_one import minimum_steps_to_one
+from src.algorithms.recursion_questions.minimum_steps_to_one import minimum_steps_to_one
 
 
 def test_4_should_return_2():
