@@ -2,7 +2,14 @@
 This problem tests your command of searching algorithms and dynamic programming, both
 of which can solve this question.
 
-One strategy is to step through a simple example if you're stuck and don't know where to start.
+There are many ways to solve this:
+BFS
+DFS
+Recursion
+Top Down Memoization
+Bottom Up Tabulation
+
+If you're stuck and don't know where to start, one strategy is to step through a simple example
 
 The dynamic programming solution is quite easy to grasp. The best way to do that is to draw a picture of the search space. Then given the constraints of the problem,
 update the number of total paths to each box. In this case, the top and left rows should all have a value
