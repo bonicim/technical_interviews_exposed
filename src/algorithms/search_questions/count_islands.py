@@ -20,6 +20,7 @@ def _remove_island(matrix, row, col):
     # outside of the columns
     if col < 0 or col > col_boundary:
         return
+    # moved from island to a non-island
     if matrix[row][col] == "O":
         return
 

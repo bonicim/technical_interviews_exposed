@@ -53,7 +53,6 @@ def get_cheapest_cost_bottom_up(rootNode):
         return node.cost + get_path_cost(parent, parents)
 
     frontier = [rootNode]
-    visited = set([rootNode])
     parents = {rootNode: None}
     min_cost = float("inf")
 
@@ -65,7 +64,6 @@ def get_cheapest_cost_bottom_up(rootNode):
         else:
             for child in current_node.children:
                 parents[child] = current_node
-                visited.add(child)
                 frontier.append(child)
 
     return min_cost
