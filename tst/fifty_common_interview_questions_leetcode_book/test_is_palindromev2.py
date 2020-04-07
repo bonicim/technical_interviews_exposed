@@ -1,4 +1,3 @@
-import pytest
 from src.algorithms.fifty_common_interview_questions_leetcode_book.is_palindrome import (
     is_palindrome,
 )

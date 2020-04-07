@@ -1,5 +1,3 @@
-import pytest
-
 from src.algorithms.vulcan_questions.plane_seat_reservation import (
     plane_seat_reservations,
 )

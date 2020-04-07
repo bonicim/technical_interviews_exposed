@@ -1,5 +1,3 @@
-import pytest
-
 from src.algorithms.misc.daily_temperatures import get_days_to_warmer_temp
 
 
