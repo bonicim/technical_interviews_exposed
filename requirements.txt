@@ -19,7 +19,7 @@ pyflakes==2.1.1
 pyparsing==2.4.6
 pytest==5.4.1
 regex==2020.4.4
-rope==0.16.0
+rope==0.17.0
 six==1.14.0
 sortedcontainers==2.1.0
 toml==0.10.0
