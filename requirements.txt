@@ -3,7 +3,7 @@ attrs==19.3.0
 autopep8==1.5.3
 black==19.10b0
 click==7.1.2
-coverage==5.1
+coverage==5.2
 entrypoints==0.3
 flake8==3.8.3
 hypothesis==5.16.1
