@@ -10,7 +10,7 @@ hypothesis==5.43.3
 importlib-metadata==3.1.1
 mccabe==0.6.1
 more-itertools==8.6.0
-packaging==20.7
+packaging==20.8
 pathspec==0.8.1
 pluggy==0.13.1
 py==1.10.0
