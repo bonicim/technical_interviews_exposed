@@ -7,7 +7,7 @@ coverage==5.4
 entrypoints==0.3
 flake8==3.8.4
 hypothesis==6.3.3
-importlib-metadata==3.4.0
+importlib-metadata==3.10.1
 mccabe==0.6.1
 more-itertools==8.7.0
 packaging==20.9
