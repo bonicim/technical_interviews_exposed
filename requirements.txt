@@ -6,7 +6,7 @@ click==7.1.2
 coverage==5.4
 entrypoints==0.3
 flake8==3.8.4
-hypothesis==6.3.3
+hypothesis==6.13.11
 importlib-metadata==3.4.0
 mccabe==0.6.1
 more-itertools==8.7.0
