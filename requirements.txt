@@ -15,14 +15,11 @@ pathspec==0.10.3
 pluggy==1.0.0
 py==1.10.0
 pyflakes==2.3.1
-pycodestyle==2.10.0
 pyparsing==2.4.7
-regex==2021.7.6
 pytest==7.2.0
 rope==0.18.0
 six==1.15.0
 sortedcontainers==2.4.0
 toml==0.10.2
-typed-ast==1.4.2
 wcwidth==0.2.5
 zipp==3.5.0
