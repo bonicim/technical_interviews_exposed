@@ -8,7 +8,7 @@ entrypoints==0.4
 flake8==3.9.2
 hypothesis==6.3.3
 importlib-metadata==4.6.3
-mccabe==0.6.1
+mccabe==0.7.0
 more-itertools==9.0.0
 packaging==20.9
 pathspec==0.10.3
