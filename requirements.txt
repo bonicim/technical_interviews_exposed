@@ -11,7 +11,7 @@ importlib-metadata==6.0.0
 mccabe==0.7.0
 more-itertools==9.0.0
 packaging==22.0
-pathspec==0.10.3
+pathspec==0.11.0
 pluggy==1.0.0
 py==1.10.0
 pyflakes==3.0.1
