@@ -1,5 +1,5 @@
 class Node:
-    # This is an everything Node. It can be used to create a graph, linkedlist, binary tree, circular linkedlist
+    # This is an every thing Node. It can be used to create a graph, linkedlist, binary tree, circular linkedlist
     # data must be an integer
     # **kwargs should only pass the following keyword arguments:
     # parent=Node(), tail=Node(), left=Node(), right=Node(), left=Node(), right=Node(), neighbors=[Node()]

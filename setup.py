@@ -1,8 +1,8 @@
 import os.path
 from setuptools import find_packages, setup
 
-readme_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'README.md'))
-with open(readme_path, 'r', encoding='utf-8') as f:
+readme_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "README.md"))
+with open(readme_path, "r", encoding="utf-8") as f:
     readme = f.read()
 
 setup(
@@ -10,7 +10,6 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     version="0.1.0",
-    
     # metadata to display on PyPI
     author="Mark Bonicillo",
     author_email="markabonicillo@gmail.com",

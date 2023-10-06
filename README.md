@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/bonicim/technical_interviews_exposed.svg?branch=master)](https://travis-ci.org/bonicim/technical_interviews_exposed)
-
 # Summary
 
 Simple and clean solutions for typical technical interview questions. The solutions are written in Python3.
@@ -47,7 +45,7 @@ You should see the following output:
 ============================================================ test session starts ============================================================
 platform darwin -- Python 3.7.4, pytest-5.1.3, py-1.8.0, pluggy-0.13.0 -- /Users/markbonicillo/Python-Virtual-Environments/ipython_env/bin/python
 cachedir: .pytest_cache
-hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/Users/markbonicillo/Workplace/technical_interviews_exposed/tst/.hypothesis/examples')
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/Users/markbonicillo/Workplace/technical_interviews_exposed/test/.hypothesis/examples')
 rootdir: /Users/markbonicillo/Workplace/technical_interviews_exposed
 plugins: hypothesis-4.36.2
 collected 11 items

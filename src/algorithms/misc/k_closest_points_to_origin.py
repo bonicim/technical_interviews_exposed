@@ -51,7 +51,9 @@ def divide_conquer_solution(points, kth):
 
     This question basically tests your knowledge of sorting and selection algorithms.
     """
-    dist = lambda index: points[index][0] ** 2 + points[index][1] ** 2
+
+    def dist(index):
+        return points[index][0] ** 2 + points[index][1] ** 2
 
     def swap(x, y):
         points[x], points[y] = points[y], points[x]
@@ -74,9 +76,7 @@ def divide_conquer_solution(points, kth):
         pivot_index = random.randint(low, high)
         pivot_dist = dist(pivot_index)
         swap(high, pivot_index)  # put the pivot at the end of the array
-        border = (
-            low
-        )  # every value to the right of border will be greater than the pivot; yes, this looks like an unnecessary variable but the name helps reinforce the purpose of this pointer
+        border = low  # every value to the right of border will be greater than the pivot; yes, this looks like an unnecessary variable but the name helps reinforce the purpose of this pointer
 
         for index in range(low, high + 1):
             current_dist = dist(index)
